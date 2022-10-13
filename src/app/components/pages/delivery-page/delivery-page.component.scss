@@ -1,0 +1,38 @@
+h2 {
+  margin: auto;
+  margin-bottom: 1em;
+  width: max-content;
+  border-bottom: 6px solid antiquewhite;
+
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2em;
+  max-width: max-content;
+  margin: auto;
+
+  .illustration {
+    display: flex;
+    gap: 1em;
+    margin: auto;
+
+    img {
+      display: block;
+      width: 72px;
+    }
+  }
+
+}
+
+p {
+  max-width: 40em;
+
+  strong {
+    font-weight: 500;
+  }
+
+
+}

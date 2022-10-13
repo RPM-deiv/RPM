@@ -9,6 +9,8 @@ import { HeaderComponent } from './components/partials/header/header.component';
 import { FooterComponent } from './components/partials/footer/footer.component';
 import { StoreItemComponent } from './components/partials/store-item/store-item.component';
 import { ProductPageComponent } from './components/pages/product-page/product-page.component';
+import { DeliveryPageComponent } from './components/pages/delivery-page/delivery-page.component';
+import { ContactPageComponent } from './components/pages/contact-page/contact-page.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { ProductPageComponent } from './components/pages/product-page/product-pa
     HeaderComponent,
     FooterComponent,
     StoreItemComponent,
-    ProductPageComponent
+    ProductPageComponent,
+    DeliveryPageComponent,
+    ContactPageComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
