@@ -1,0 +1,72 @@
+footer {
+  background-color: #111;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1em;
+  align-items: center;
+  padding: 1em calc(1em + 2vw);
+  color: #fff;
+  text-align: center;
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr 1fr;
+
+    .logo {
+      grid-column: 1 / -1;
+    }
+  }
+  @media (max-width: 450px) {
+    display: flex;
+    flex-direction: column;
+    padding-top: 2em;
+    padding-bottom: 2em;
+  }
+
+  .visit-instagram {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 1em auto;
+
+    img {
+      width: 2em;
+      margin: auto;
+    }
+
+    span {
+      font-size: 0.9rem;
+      color: #eee;
+    }
+  }
+
+  nav {
+    ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 2em;
+    }
+  }
+
+  a {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    color: antiquewhite;
+    padding: 0.1em 0.3em;
+    text-underline-offset: 2px;
+    transition: all 0.2s;
+
+    &:hover {
+      color: orange;
+    }
+  }
+
+  .logo {
+    display: block;
+    margin: auto;
+    width: 6em;
+    mix-blend-mode: lighten;
+    transform: scale(1.2);
+  }
+}
