@@ -18,7 +18,7 @@ header {
   h1 {
     font-size: 2rem;
     color: #333;
-    font-family: 'Merriweather', serif;
+    font-family: "Merriweather", serif;
     line-height: 1;
     margin-bottom: 0.25em;
     z-index: 1;
@@ -78,22 +78,16 @@ header {
   }
 
   @media (max-width: 480px) {
-
-    nav {
-      outline: 1px solid red;
-      outline-offset: -2px;
-    }
-
     ul {
       padding: 0 2em;
       flex-wrap: nowrap;
 
       li {
-        padding: .25em;
+        padding: 0.25em;
         a {
           padding: 0;
-          font-size: .9rem;
-          padding: .25em .5em;
+          font-size: 0.9rem;
+          padding: 0.25em 0.5em;
         }
       }
     }

@@ -1,1 +1,7 @@
-<p>store-page works!</p>
+<ul class="products-list">
+  <li @fadeIn *ngFor="let product of products | async">
+    <app-store-item [product]="product">
+      {{ product.title }}
+    </app-store-item>
+  </li>
+</ul>
