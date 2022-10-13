@@ -1,11 +1,15 @@
+.wrapper {
+  max-width: 1200px;
+  padding: 1.5em;
+  margin: auto;
+  padding-bottom: 3em;
+}
+
 h2 {
   margin: auto;
   margin-bottom: 1em;
   width: max-content;
   border-bottom: 6px solid antiquewhite;
-}
-
-p {
 }
 
 .name {
@@ -16,7 +20,7 @@ p {
   margin-bottom: 0;
 }
 
-.container {
+.cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(22em, 1fr));
   gap: 1em;
@@ -99,7 +103,5 @@ p {
         color: #000;
       }
     }
-
-
   }
 }

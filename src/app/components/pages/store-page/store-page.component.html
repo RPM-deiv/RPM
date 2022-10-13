@@ -1,7 +1,38 @@
-<ul class="products-list">
-  <li @fadeIn *ngFor="let product of products | async">
-    <app-store-item [product]="product">
-      {{ product.title }}
-    </app-store-item>
-  </li>
-</ul>
+<div class="wrapper">
+  <div class="topbar">
+    <form class="search-form" (submit)="$event.preventDefault()">
+      <label for="search_input">Chercher sur le site</label>
+      <input
+        id="search_input"
+        type="text"
+        name="query"
+        class="search"
+        placeholder="ex.: commode, secrétaire, chaises..."
+        autocomplete="off"
+        maxlength="30"
+        #search
+        (keyup)="filterProducts(search.value)"
+      />
+    </form>
+  </div>
+
+  <ul class="products-list">
+    <li *ngFor="let product of displayedProducts">
+      <app-store-item [product]="product">
+        {{ product.title }}
+      </app-store-item>
+    </li>
+    <div class="no-results" *ngIf="searchQuery && displayedProducts.length <= 0">
+      <p>
+        Aucun produit correspondant à la recherche
+        <strong>{{ searchQuery }}</strong
+        >.
+      </p>
+      <p>
+        De nouvelles trouvailles pourraient correspondre, ne les manquez pas en
+        vous abonnant à notre liste de diffusion!
+      </p>
+      <img src="../../../../assets/img/arrow.svg" alt="" class="arrow" />
+    </div>
+  </ul>
+</div>

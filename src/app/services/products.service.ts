@@ -8,7 +8,11 @@ import { Product } from '../models/Product';
   providedIn: 'root',
 })
 export class ProductsService {
-  constructor(private http: HttpClient) {}
+  public products: any;
+
+  constructor(private http: HttpClient) {
+    this.products = this.getProducts();
+  }
 
   getProducts(): Observable<Product[]> {
     return this.http.get<Product[]>('/.netlify/functions/getProducts', {
@@ -16,5 +20,10 @@ export class ProductsService {
         'Content-Type': 'application/json ',
       },
     });
+  }
+
+  storeProducts() {
+    this.products.toPromise().then((res: any) => this.products = res);
+    // console.log('***', data);
   }
 }

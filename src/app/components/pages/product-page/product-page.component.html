@@ -1,1 +1,98 @@
-<p>product-page works!</p>
+<div class="wrapper">
+  <div class="product-view" *ngIf="product">
+    <div class="images">
+      <div class="main-image">
+        <img
+          #mainImageElement
+          (mouseleave)="mainImageElement.style.transform = 'unset'"
+          (mousemove)="mouseMove($event, mainImageElement)"
+          [attr.src]="mainImage"
+          alt=""
+        />
+      </div>
+      <div class="secondary-images">
+        <div class="secondary-image" *ngFor="let image of product.images">
+          <img
+            (click)="setMainImage($event, image.large)"
+            [attr.src]="image.small"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+    <div class="details">
+      <h2>{{ product.title }}</h2>
+      <p class="description">
+        {{ product.body }}
+      </p>
+      <ul class="dimensions">
+        <span>Dimensions</span>
+        <li *ngFor="let element of product.dimensions">{{ element }}</li>
+      </ul>
+      <div class="price">
+        <span>{{ product.price }} €</span>
+        <p>
+          Livraison offerte à Paris,
+          <a routerLink="/livraison">voir conditions</a>
+        </p>
+      </div>
+      <p class="additional-text">
+        Ce mobilier est en très bon état pour son âge mais comme tout mobilier
+        vintage il peut conserver quelques traces de vie et d'usage. Il sera
+        parfaitement à sa place avec du mobilier scandinave, rétro années
+        50/60/70 ou industriel.
+      </p>
+      <div class="call-to-action">
+        <strong
+          [attr.data-state]="product.state"
+          *ngIf="product.state === 'available'"
+          ><span class="state">Disponible!</span>Contactez-moi pour en savoir
+          plus.</strong
+        >
+        <strong
+          [attr.data-state]="product.state"
+          *ngIf="product.state === 'engaged'"
+          ><span class="state">Actuellement réservé.</span>Contactez-moi pour en
+          savoir plus.</strong
+        >
+        <strong
+          [attr.data-state]="product.state"
+          *ngIf="product.state === 'sold'"
+          ><span class="state">Ce produit n'est plus disponible.</span></strong
+        >
+        <button
+          *ngIf="product.state === 'available' || product.state === 'engaged'"
+          class="cta"
+          tabindex="0"
+          (click)="contactVisible = true"
+        >
+          <span *ngIf="!contactVisible">Me contacter</span>
+          <div *ngIf="contactVisible" class="contact-options" #contactOptions>
+            <a
+              [attr.href]="
+                'mailto: billybinche@gmail.com?subject=' + product.title
+              "
+              ><img src="../../../assets/img/send.svg" alt="" /> Envoyer un
+              mail</a
+            >
+            <button #copyButton>
+              <img src="../../../assets/img/clipboard.svg" alt="" /> Copier
+              l'addresse
+            </button>
+            <!-- <button
+              #copyButton
+              [cdkCopyToClipboard]="email"
+              (cdkCopyToClipboardCopied)="onMailCopy($event, copyButton)">
+              <img src="../../../assets/img/clipboard.svg" alt="" /> Copier
+              l'addresse
+            </button> -->
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div id="preload-images" style="display: none !important">
+    <img src="../../../assets/img/send.svg" alt="" />
+    <img src="../../../assets/img/clipboard.svg" alt="" />
+  </div>
+</div>
