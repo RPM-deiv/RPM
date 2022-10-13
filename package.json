@@ -10,7 +10,7 @@
     "dev:ssr": "ng run rpm-deiv:serve-ssr",
     "serve:ssr": "node dist/rpm-deiv/server/main.js",
     "build:ssr": "ng build && ng run rpm-deiv:server",
-    "prerender": "ng run rpm-deiv:prerender"
+    "prerender": "ng run rpm-deiv:prerender --routes-file routes.txt"
   },
   "private": true,
   "dependencies": {
