@@ -3,11 +3,25 @@ import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { ProductsService } from 'src/app/services/products.service';
 import { Product } from 'src/app/models/Product';
+import {
+  state,
+  style,
+  transition,
+  animate,
+  trigger,
+} from '@angular/animations';
 
 @Component({
   selector: 'app-product-page',
   templateUrl: './product-page.component.html',
   styleUrls: ['./product-page.component.scss'],
+  animations: [
+    trigger('fadeIn', [
+      state('in', style({ opacity: 1 })),
+      transition('void => *', [style({ opacity: 0}), animate(500)]),
+      transition('* => void', [style({ opacity: 0}), animate(500)]),
+    ]),
+  ],
 })
 export class ProductPageComponent implements OnInit {
   public id: string = '';
@@ -28,15 +42,18 @@ export class ProductPageComponent implements OnInit {
     this.routeSub = this.route.params.subscribe((params) => {
       this.id = params['id'];
     });
-    this.productsService.products.subscribe((products: Product[]) => {
-      this.products = products as Product[];
-      this.product = this.products.find((el) => el.id === this.id);
-      this.mainImage = this.product.images[0].large;
-    });
-    if (window.history.state.id) {
+    if (window.history.state.id === this.id) {
       this.product = window.history.state;
-      return;
+      this.mainImage = this.product.images[0].large;
+    } else {
+      this.productsService.products.subscribe((products: Product[]) => {
+        this.products = products as Product[];
+        this.product = this.products.find((el) => el.id === this.id);
+        this.mainImage = this.product.images[0].large;
+      });
     }
+
+
     // this.productsService.products.subscribe((products: Product[]) => {
     //   this.products = products as Product[];
     //   this.displayedProducts = this.products;

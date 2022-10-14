@@ -1,4 +1,4 @@
-<div class="wrapper">
+<div @fadeIn class="wrapper" *ngIf="products">
   <div class="topbar">
     <form class="search-form" (submit)="$event.preventDefault()">
       <label for="search_input">Chercher sur le site</label>

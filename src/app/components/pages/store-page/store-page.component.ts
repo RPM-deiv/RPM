@@ -1,15 +1,27 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Observable } from 'rxjs';
 import { Product } from 'src/app/models/Product';
 import { ProductsService } from 'src/app/services/products.service';
+import {
+  state,
+  style,
+  transition,
+  animate,
+  trigger,
+} from '@angular/animations';
 
 @Component({
   selector: 'app-store-page',
   templateUrl: './store-page.component.html',
   styleUrls: ['./store-page.component.scss'],
+  animations: [
+    trigger('fadeIn', [
+      state('in', style({ opacity: 1 })),
+      transition('void => *', [style({ opacity: 0}), animate(500)]),
+      transition('* => void', [style({ opacity: 0}), animate(500)]),
+    ]),
+  ],
 })
 export class StorePageComponent implements OnInit {
-  // products!: Observable<Product[]>;
   products!: Product[];
   allProducts!: Product[];
   displayedProducts!: Product[];
@@ -18,8 +30,6 @@ export class StorePageComponent implements OnInit {
   constructor(private productsService: ProductsService) {}
 
   ngOnInit(): void {
-    // this.products = this.productsService.getProducts();
-    // this.products = this.productsService.getProducts();
     this.productsService.products.subscribe((products: Product[]) => {
       this.products = products as Product[];
       this.allProducts = this.products;

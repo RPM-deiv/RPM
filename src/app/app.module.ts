@@ -11,6 +11,7 @@ import { StoreItemComponent } from './components/partials/store-item/store-item.
 import { ProductPageComponent } from './components/pages/product-page/product-page.component';
 import { DeliveryPageComponent } from './components/pages/delivery-page/delivery-page.component';
 import { ContactPageComponent } from './components/pages/contact-page/contact-page.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ContactPageComponent } from './components/pages/contact-page/contact-pa
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
