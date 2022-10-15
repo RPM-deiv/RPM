@@ -1,0 +1,16 @@
+<div class="wrapper">
+  <h2>Newsletter de Monsieur</h2>
+
+  <div class="container">
+    <img src="../../../assets/img/newsletter.svg" alt="" />
+    <p *ngIf="!bienvenue">
+      Merci beaucoup ! Vous allez recevoir un mail afin de confirmer votre adresse.
+    </p>
+    <p *ngIf="bienvenue">
+      Vous recevrez désormais une sélection de nouvelles trouvailles par mail.
+      Merci et belle journée à vous !
+    </p>
+
+    <a class="link" routerLink="/">Revenir à la boutique</a>
+  </div>
+</div>

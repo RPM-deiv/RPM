@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/models/Product';
 import { ProductsService } from 'src/app/services/products.service';
 import {
@@ -16,12 +16,13 @@ import {
   animations: [
     trigger('fadeIn', [
       state('in', style({ opacity: 1 })),
-      transition('void => *', [style({ opacity: 0}), animate(500)]),
-      transition('* => void', [style({ opacity: 0}), animate(500)]),
+      transition('void => *', [style({ opacity: 0 }), animate(500)]),
+      transition('* => void', [style({ opacity: 0 }), animate(500)]),
     ]),
   ],
 })
 export class StorePageComponent implements OnInit {
+  isLoading = true;
   products!: Product[];
   allProducts!: Product[];
   displayedProducts!: Product[];
@@ -30,7 +31,7 @@ export class StorePageComponent implements OnInit {
   constructor(private productsService: ProductsService) {}
 
   ngOnInit(): void {
-    this.productsService.products.subscribe((products: Product[]) => {
+    this.productsService.getProducts().subscribe((products: Product[]) => {
       this.products = products as Product[];
       this.allProducts = this.products;
       this.displayedProducts = this.allProducts;

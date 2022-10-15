@@ -10,6 +10,9 @@ body {
   min-height: 100vh;
   background-color: hsl(34, 20%, 98%);
 }
+body, html {
+  scroll-behavior: smooth;
+}
 input,
 button {
   font-family: inherit;
@@ -57,4 +60,10 @@ a {
   }
 }
 
+.wrapper {
+  max-width: 1200px;
+  padding: 1em;
+  margin: auto;
+  padding-bottom: 3em;
+}
 /*****************/

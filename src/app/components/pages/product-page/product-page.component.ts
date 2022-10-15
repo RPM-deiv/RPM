@@ -46,7 +46,7 @@ export class ProductPageComponent implements OnInit {
       this.product = window.history.state;
       this.mainImage = this.product.images[0].large;
     } else {
-      this.productsService.products.subscribe((products: Product[]) => {
+      this.productsService.getProducts().subscribe((products: Product[]) => {
         this.products = products as Product[];
         this.product = this.products.find((el) => el.id === this.id);
         this.mainImage = this.product.images[0].large;

@@ -13,6 +13,7 @@ import { DeliveryPageComponent } from './components/pages/delivery-page/delivery
 import { ContactPageComponent } from './components/pages/contact-page/contact-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NewsletterFormComponent } from './components/partials/newsletter-form/newsletter-form.component';
+import { SubscriptionPageComponent } from './components/pages/subscription-page/subscription-page.component';
 
 @NgModule({
   declarations: [
@@ -24,15 +25,16 @@ import { NewsletterFormComponent } from './components/partials/newsletter-form/n
     ProductPageComponent,
     DeliveryPageComponent,
     ContactPageComponent,
-    NewsletterFormComponent
+    NewsletterFormComponent,
+    SubscriptionPageComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
