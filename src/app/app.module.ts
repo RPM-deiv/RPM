@@ -14,7 +14,6 @@ import { ContactPageComponent } from './components/pages/contact-page/contact-pa
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NewsletterFormComponent } from './components/partials/newsletter-form/newsletter-form.component';
 import { SubscriptionPageComponent } from './components/pages/subscription-page/subscription-page.component';
-import { ClipboardModule } from '@angular/cdk/clipboard';
 
 @NgModule({
   declarations: [
@@ -34,7 +33,6 @@ import { ClipboardModule } from '@angular/cdk/clipboard';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    ClipboardModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
