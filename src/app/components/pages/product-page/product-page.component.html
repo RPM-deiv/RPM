@@ -70,7 +70,7 @@
           <div *ngIf="contactVisible" class="contact-options" #contactOptions>
             <a
               [attr.href]="
-                'mailto: billybinche@gmail.com?subject=' + product.title
+                'mailto: reveilleparmonsieur@gmail.com?subject=' + product.title
               "
               ><img src="../../../assets/img/send.svg" alt="" /> Envoyer un
               mail</a
@@ -79,13 +79,13 @@
               <img src="../../../assets/img/clipboard.svg" alt="" /> Copier
               l'addresse
             </button>
-            <!-- <button
+            <button
               #copyButton
               [cdkCopyToClipboard]="email"
               (cdkCopyToClipboardCopied)="onMailCopy($event, copyButton)">
               <img src="../../../assets/img/clipboard.svg" alt="" /> Copier
               l'addresse
-            </button> -->
+            </button>
           </div>
         </button>
       </div>
