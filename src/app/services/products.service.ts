@@ -12,8 +12,7 @@ export class ProductsService {
   cachedProducts$!: Observable<Product[]>;
 
   constructor(private http: HttpClient) {
-    // this.data = this.getProducts();
-    // this.products = this.data;
+
   }
 
   getProducts(): Observable<Product[]> {
@@ -29,22 +28,6 @@ export class ProductsService {
           shareReplay(1)
         );
     }
-    console.log(this.cachedProducts$)
     return this.cachedProducts$;
   }
-
-  // getProducts(): Observable<Product[]> {
-  //   return this.http
-  //     .get<Product[]>('/.netlify/functions/getProducts', {
-  //       headers: {
-  //         'Content-Type': 'application/json ',
-  //       },
-  //     })
-  //     .pipe(map((response: any) => response));
-  // }
-
-  // storeProducts() {
-  //   this.products.toPromise().then((res: any) => (this.products = res));
-  //   // console.log('***', data);
-  // }
 }

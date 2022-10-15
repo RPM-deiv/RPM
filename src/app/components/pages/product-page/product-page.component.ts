@@ -18,8 +18,8 @@ import {
   animations: [
     trigger('fadeIn', [
       state('in', style({ opacity: 1 })),
-      transition('void => *', [style({ opacity: 0}), animate(500)]),
-      transition('* => void', [style({ opacity: 0}), animate(500)]),
+      transition('void => *', [style({ opacity: 0 }), animate(500)]),
+      transition('* => void', [style({ opacity: 0 }), animate(500)]),
     ]),
   ],
 })
@@ -52,12 +52,6 @@ export class ProductPageComponent implements OnInit {
         this.mainImage = this.product.images[0].large;
       });
     }
-
-
-    // this.productsService.products.subscribe((products: Product[]) => {
-    //   this.products = products as Product[];
-    //   this.displayedProducts = this.products;
-    // });
   }
 
   setMainImage(e: Event, img: string) {

@@ -8,7 +8,7 @@ const sanity = sanityClient({
 });
 
 exports.handler = async () => {
-  const query = '*[_type=="product"] | order(title asc)';
+  const query = '*[_type=="product"] | order(_createdAt desc)';
   const products = await sanity.fetch(query).then((results) => {
     const allProducts = results.map((product) => {
       const output = {
@@ -27,7 +27,7 @@ exports.handler = async () => {
         product.images.forEach((img) => {
           const imgRef = img.asset._ref;
           output.images.push({
-            small: imageUrlBuilder(sanity).image(imgRef).width(200).url(),
+            small: imageUrlBuilder(sanity).image(imgRef).width(150).url(),
             square: imageUrlBuilder(sanity).image(imgRef).size(400, 400).url(),
             large: imageUrlBuilder(sanity).image(imgRef).width(1000).url(),
           });

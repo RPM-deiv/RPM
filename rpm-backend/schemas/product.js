@@ -53,6 +53,11 @@ export default {
       type: "number",
     },
     {
+      name: "complementarytext",
+      title: "Texte complémentaire",
+      type: "text",
+    },
+    {
       name: "images",
       title: "Photos",
       type: "array",

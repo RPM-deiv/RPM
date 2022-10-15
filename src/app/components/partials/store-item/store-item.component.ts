@@ -33,6 +33,18 @@ export class StoreItemComponent implements OnInit {
     images: [''],
   };
 
+  public state = () => {
+    if (this.product.state === 'available') {
+      return 'Disponible';
+    } else if (this.product.state === 'engaged') {
+      return 'Réservé';
+    } else if (this.product.state === 'sold') {
+      return 'Vendu';
+    } else {
+      return '';
+    }
+  };
+
   constructor() {}
 
   ngOnInit(): void {}
