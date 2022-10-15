@@ -1,6 +1,6 @@
 .wrapper {
   max-width: 1200px;
-  padding: 1.5em;
+  padding: 1em;
   margin: auto;
   padding-bottom: 3em;
 }
@@ -54,6 +54,11 @@
   gap: calc(0.5em + 2vw);
   max-width: 1000px;
   margin: 1em auto 3em;
+  min-height: 50vh;
+}
+
+.products-list:empty {
+  height: 20vh;
 }
 
 .no-results {

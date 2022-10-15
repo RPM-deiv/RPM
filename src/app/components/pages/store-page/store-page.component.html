@@ -1,5 +1,5 @@
-<div @fadeIn class="wrapper" *ngIf="products">
-  <div class="topbar">
+<div class="wrapper">
+  <div @fadeIn class="topbar" *ngIf="products">
     <form class="search-form" (submit)="$event.preventDefault()">
       <label for="search_input">Chercher sur le site</label>
       <input
@@ -22,7 +22,10 @@
         {{ product.title }}
       </app-store-item>
     </li>
-    <div class="no-results" *ngIf="searchQuery && displayedProducts.length <= 0">
+    <div
+      class="no-results"
+      *ngIf="searchQuery && displayedProducts.length <= 0"
+    >
       <p>
         Aucun produit correspondant à la recherche
         <strong>{{ searchQuery }}</strong
@@ -36,3 +39,5 @@
     </div>
   </ul>
 </div>
+
+<app-newsletter-form></app-newsletter-form>

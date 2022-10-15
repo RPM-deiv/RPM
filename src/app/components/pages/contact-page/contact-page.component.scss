@@ -1,6 +1,6 @@
 .wrapper {
   max-width: 1200px;
-  padding: 1.5em;
+  padding: 1em;
   margin: auto;
   padding-bottom: 3em;
 }
@@ -40,14 +40,18 @@ h2 {
     border: 1px solid #0002;
     overflow: hidden;
 
-    @media (max-width: 550px) {
-      flex-direction: column;
-    }
 
     img {
       user-select: none;
       width: 48px;
       height: 48px;
+    }
+    @media (max-width: 420px) {
+      img {
+        width: 32px;
+        height: 32px;
+      }
+      font-size: .9rem;
     }
 
     &.card_name {

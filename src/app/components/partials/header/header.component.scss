@@ -7,7 +7,6 @@ header {
   text-align: center;
   padding-top: 1.5em;
   background-color: #e9f1f7;
-  // margin-bottom: 1em;
 
   .logo {
     width: 12em;
@@ -38,7 +37,7 @@ header {
     justify-content: center;
     background-color: #fff;
     align-self: stretch;
-    padding: 1em;
+    padding: .5em;
     border-top: 1px solid #0002;
   }
 
@@ -80,7 +79,7 @@ header {
 
   @media (max-width: 480px) {
     ul {
-      padding: 0 2em;
+      padding: 0 1em;
       flex-wrap: nowrap;
 
       li {

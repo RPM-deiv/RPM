@@ -12,6 +12,7 @@ import { ProductPageComponent } from './components/pages/product-page/product-pa
 import { DeliveryPageComponent } from './components/pages/delivery-page/delivery-page.component';
 import { ContactPageComponent } from './components/pages/contact-page/contact-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NewsletterFormComponent } from './components/partials/newsletter-form/newsletter-form.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     StoreItemComponent,
     ProductPageComponent,
     DeliveryPageComponent,
-    ContactPageComponent
+    ContactPageComponent,
+    NewsletterFormComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
