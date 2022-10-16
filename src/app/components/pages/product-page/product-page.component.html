@@ -25,10 +25,12 @@
       <p class="description">
         {{ product.body }}
       </p>
-      <ul class="dimensions">
+      <div class="dimensions">
         <span>Dimensions</span>
-        <li *ngFor="let element of product.dimensions">{{ element }}</li>
-      </ul>
+        <ul>
+          <li *ngFor="let element of product.dimensions">{{ element }}</li>
+        </ul>
+      </div>
       <div class="price">
         <span>{{ product.price }} €</span>
         <p>

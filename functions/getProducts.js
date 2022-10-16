@@ -29,7 +29,7 @@ exports.handler = async () => {
           output.images.push({
             small: imageUrlBuilder(sanity).image(imgRef).width(150).url(),
             square: imageUrlBuilder(sanity).image(imgRef).size(400, 400).url(),
-            large: imageUrlBuilder(sanity).image(imgRef).width(1000).url(),
+            large: imageUrlBuilder(sanity).image(imgRef).width(800).url(),
           });
         });
       }

@@ -29,7 +29,8 @@ footer {
     margin: 1em auto;
 
     img {
-      width: 2em;
+      width: 32px;
+      height: 32px;
       margin: auto;
     }
 
@@ -65,7 +66,8 @@ footer {
   .logo {
     display: block;
     margin: auto;
-    width: 6em;
+    width: 100px;
+    height: 100px;
     mix-blend-mode: lighten;
     transform: scale(1.2);
   }
