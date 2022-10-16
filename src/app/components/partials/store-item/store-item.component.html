@@ -1,7 +1,13 @@
 <div @fadeIn class="product-item">
   <a [routerLink]="['produits', product.id]" [state]="product">
     <div class="image-container">
-      <img (onloadeddata)="logLoad()" aria-hidden="true" [src]="product.images[0].square" />
+      <img aria-hidden="true" [src]="product.images[0].square" />
+      <img
+        aria-hidden="true"
+        style="display: none !important"
+        loading="lazy"
+        [src]="product.images[0].large"
+      />
     </div>
     <span class="product-name">{{ product.title }}</span>
     <span class="product-state">{{ state() }}</span>
