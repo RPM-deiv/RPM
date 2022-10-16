@@ -68,4 +68,20 @@ export class ProductPageComponent implements OnInit {
       ${((e.pageY - el.offsetTop) / el.height) * 100}%
     `;
   }
+
+  copyToClipboard(btn: HTMLButtonElement) {
+    btn.style.backgroundColor = '#d9f99d';
+    setTimeout(() => {
+      btn.style.backgroundColor = '';
+    }, 500);
+    const el = document.createElement('textarea');
+    el.value = 'reveilleparmonsieur@gmail.com';
+    el.setAttribute('readonly', '');
+    el.style.position = 'absolute';
+    el.style.left = '-9999px';
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+  }
 }

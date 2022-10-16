@@ -61,6 +61,7 @@
           ><span class="state">Ce produit n'est plus disponible.</span></strong
         >
         <button
+          #contactButton
           *ngIf="product.state === 'available' || product.state === 'engaged'"
           class="cta"
           tabindex="0"
@@ -75,17 +76,10 @@
               ><img src="../../../assets/img/send.svg" alt="" /> Envoyer un
               mail</a
             >
-            <button #copyButton>
+            <button (click)="copyToClipboard(contactButton)">
               <img src="../../../assets/img/clipboard.svg" alt="" /> Copier
               l'addresse
             </button>
-            <!-- <button
-              #copyButton
-              [cdkCopyToClipboard]="email"
-              (cdkCopyToClipboardCopied)="onMailCopy($event, copyButton)">
-              <img src="../../../assets/img/clipboard.svg" alt="" /> Copier
-              l'addresse
-            </button> -->
           </div>
         </button>
       </div>
