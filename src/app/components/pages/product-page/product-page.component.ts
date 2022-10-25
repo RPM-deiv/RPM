@@ -59,9 +59,9 @@ export class ProductPageComponent implements OnInit {
   }
 
   mouseMove(e: any, el: any) {
-    if (e.sourceCapabilities.firesTouchEvents) return;
+    // if (e.sourceCapabilities.firesTouchEvents) return;
+    if ('ontouchstart' in document.documentElement) return;
 
-    el.href;
     el.style.transform = 'scale(3)';
     el.style.transformOrigin = `
       ${((e.pageX - el.offsetLeft) / el.width) * 100}%
