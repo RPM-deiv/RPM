@@ -5,7 +5,9 @@
   width: max-content;
   align-items: center;
   color: #555;
-  margin-bottom: 60vh;
+  min-height: 40vh;
+  margin-bottom: 10vh;
+  justify-content: center;
 
   span {
     display: block;

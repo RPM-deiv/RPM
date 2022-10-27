@@ -8,6 +8,7 @@
           (mousemove)="mouseMove($event, mainImageElement)"
           [attr.src]="mainImage"
           alt=""
+          aria-hidden="true"
         />
       </div>
       <div class="secondary-images">
@@ -16,6 +17,7 @@
             (click)="setMainImage($event, image.large)"
             [attr.src]="image.small"
             alt=""
+            aria-hidden="true"
           />
         </div>
       </div>
