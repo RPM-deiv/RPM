@@ -35,6 +35,7 @@ export class StorePageComponent implements OnInit {
       this.products = products as Product[];
       this.allProducts = this.products;
       this.displayedProducts = this.allProducts;
+      this.isLoading = false;
     });
   }
 

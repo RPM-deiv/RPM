@@ -14,9 +14,13 @@
         (keyup)="filterProducts(search.value)"
       />
     </form>
+
   </div>
 
-  <ul class="products-list" *ngIf="displayedProducts.length > 0">
+  <p class="loader" *ngIf="isLoading">Chargement des trouvailles<span></span></p>
+
+
+  <ul class="products-list">
     <li *ngFor="let product of displayedProducts">
       <app-store-item [product]="product">
         {{ product.title }}
@@ -38,4 +42,4 @@
 </div>
 
 
-<app-newsletter-form></app-newsletter-form>
+<app-newsletter-form *ngIf="!isLoading"></app-newsletter-form>
