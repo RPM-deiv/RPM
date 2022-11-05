@@ -91,4 +91,8 @@ export class ProductPageComponent implements OnInit {
     document.execCommand('copy');
     document.body.removeChild(el);
   }
+
+  loaded(e: Event, newSrc: string) {
+    (e.target as HTMLImageElement).src = newSrc;
+  }
 }
