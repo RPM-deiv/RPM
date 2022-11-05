@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { ProductsService } from 'src/app/services/products.service';
 import { Product } from 'src/app/models/Product';
@@ -35,7 +35,8 @@ export class ProductPageComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private productsService: ProductsService
+    private productsService: ProductsService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -49,6 +50,12 @@ export class ProductPageComponent implements OnInit {
       this.productsService.getProducts().subscribe((products: Product[]) => {
         this.products = products as Product[];
         this.product = this.products.find((el) => el.id === this.id);
+
+        if (!this.product) {
+          this.router.navigate(['/page-non-trouvee']);
+          return;
+        }
+
         this.mainImage = this.product.images[0].large;
       });
     }

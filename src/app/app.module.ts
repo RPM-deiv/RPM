@@ -14,6 +14,7 @@ import { ContactPageComponent } from './components/pages/contact-page/contact-pa
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NewsletterFormComponent } from './components/partials/newsletter-form/newsletter-form.component';
 import { SubscriptionPageComponent } from './components/pages/subscription-page/subscription-page.component';
+import { PageNotFoundComponent } from './components/pages/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { SubscriptionPageComponent } from './components/pages/subscription-page/
     ContactPageComponent,
     NewsletterFormComponent,
     SubscriptionPageComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

@@ -5,6 +5,7 @@ import { DeliveryPageComponent } from './components/pages/delivery-page/delivery
 import { ContactPageComponent } from './components/pages/contact-page/contact-page.component';
 import { ProductPageComponent } from './components/pages/product-page/product-page.component';
 import { SubscriptionPageComponent } from './components/pages/subscription-page/subscription-page.component';
+import { PageNotFoundComponent } from './components/pages/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   { path: '', component: StorePageComponent },
@@ -16,6 +17,7 @@ const routes: Routes = [
     path: 'produits/:id',
     component: ProductPageComponent,
   },
+  { path: '**', component: PageNotFoundComponent },
 ];
 
 @NgModule({
