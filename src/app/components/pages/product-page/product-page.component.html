@@ -41,12 +41,13 @@
           <a class="link" routerLink="/livraison">voir conditions</a>
         </p>
       </div>
-      <p class="additional-text">
+      <p *ngIf="!product.complementarytext" class="additional-text">
         Ce mobilier est en très bon état pour son âge mais comme tout mobilier
         vintage il peut conserver quelques traces de vie et d'usage. Il sera
         parfaitement à sa place avec du mobilier scandinave, rétro années
         50/60/70 ou industriel.
       </p>
+      <p *ngIf="product.complementarytext" class="additional-text">{{ product.complementarytext }}</p>
       <div class="call-to-action">
         <strong
           [attr.data-state]="product.state"

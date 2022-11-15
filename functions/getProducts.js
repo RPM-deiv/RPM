@@ -21,6 +21,7 @@ exports.handler = async () => {
         price: product.price,
         body: product.body,
         images: [],
+        complementarytext: product.complementarytext
       };
 
       if (product.images && product.images.length > 0) {
