@@ -7,6 +7,7 @@ export default {
       name: "title",
       title: "Intitulé",
       type: "string",
+      validation: Rule => Rule.required(),
     },
     {
       name: "slug",
@@ -16,6 +17,7 @@ export default {
         source: "title",
         maxLength: 96,
       },
+      validation: Rule => Rule.required(),
     },
     {
       title: "Disponibilité",
@@ -29,11 +31,13 @@ export default {
           { title: "Vendu", value: "sold" },
         ],
       },
+      validation: Rule => Rule.required(),
     },
     {
       name: "body",
       title: "Présentation",
       type: "text",
+      validation: Rule => Rule.required(),
     },
     {
       name: "tags",
@@ -46,11 +50,13 @@ export default {
       title: "Dimensions",
       type: "array",
       of: [{ type: "string" }],
+      validation: Rule => Rule.required(),
     },
     {
       name: "price",
       title: "Prix",
       type: "number",
+      validation: Rule => Rule.required(),
     },
     {
       name: "complementarytext",
@@ -69,6 +75,7 @@ export default {
           },
         },
       ],
+      validation: Rule => Rule.required(),
     },
   ],
   preview: {

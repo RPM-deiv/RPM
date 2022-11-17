@@ -4,4 +4,4 @@ Allow: /
 Disallow: /newsletter/
 Disallow: /newsletter-bienvenue/
 
-Sitemap: https://reveilleparmonsieur-projet.netlify.app/sitemap.xml
+Sitemap: https://reveilleparmonsieur.fr/sitemap.xml

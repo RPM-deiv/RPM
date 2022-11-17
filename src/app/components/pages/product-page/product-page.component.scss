@@ -27,6 +27,16 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, (minmax(50px, 1fr)));
       gap: 4px;
+
+      .secondary-image {
+        max-width: max-content;
+      }
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
     }
   }
 

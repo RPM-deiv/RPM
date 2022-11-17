@@ -29,8 +29,6 @@ export class ProductPageComponent implements OnInit {
   public product: any;
   public routeSub!: Subscription;
   public mainImage = '';
-
-  public email: string = 'rpm-deiv@gmail.com';
   public contactVisible: boolean = false;
 
   constructor(
