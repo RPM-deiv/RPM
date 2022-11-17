@@ -1,14 +1,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-  <loc>https://reveilleparmonsieur-projet.netlify.app/</loc>
+  <loc>https://reveilleparmonsieur.fr/</loc>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://reveilleparmonsieur-projet.netlify.app/livraison</loc>
+  <loc>https://reveilleparmonsieur.fr/livraison</loc>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://reveilleparmonsieur-projet.netlify.app/contact</loc>
+  <loc>https://reveilleparmonsieur.fr/contact</loc>
   <priority>0.80</priority>
 </url>
 </urlset>
