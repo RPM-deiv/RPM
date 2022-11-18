@@ -1,6 +1,6 @@
 <div @fadeIn class="wrapper">
   <div class="product-view" *ngIf="product">
-    <div class="images">
+    <div class="images" [class]="{ landscape: landscapeOrientation }">
       <div class="main-image">
         <img
           #mainImageElement

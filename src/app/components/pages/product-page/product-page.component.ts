@@ -29,6 +29,7 @@ export class ProductPageComponent implements OnInit {
   public product: any;
   public routeSub!: Subscription;
   public mainImage = '';
+  public landscapeOrientation = false;
   public contactVisible: boolean = false;
 
   constructor(
@@ -44,6 +45,7 @@ export class ProductPageComponent implements OnInit {
     if (window.history.state.id === this.id) {
       this.product = window.history.state;
       this.mainImage = this.product.images[0].large;
+      this.checkLandscapeOrientation();
     } else {
       this.productsService.getProducts().subscribe((products: Product[]) => {
         this.products = products as Product[];
@@ -55,12 +57,19 @@ export class ProductPageComponent implements OnInit {
         }
 
         this.mainImage = this.product.images[0].large;
+        this.checkLandscapeOrientation();
       });
     }
   }
 
   setMainImage(e: Event, img: string) {
     this.mainImage = img;
+  }
+
+  checkLandscapeOrientation() {
+    const dimensions = this.mainImage.split('-')[1].split('.')[0].split('x');
+    if (!dimensions) return;
+    this.landscapeOrientation = dimensions[0] > dimensions[1];
   }
 
   mouseMove(e: any, el: any) {

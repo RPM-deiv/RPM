@@ -12,6 +12,10 @@
     flex-direction: column;
     gap: 0.25em;
 
+    &.landscape {
+      flex-basis: 340px;
+    }
+
     .main-image {
       overflow: hidden;
       display: flex;
