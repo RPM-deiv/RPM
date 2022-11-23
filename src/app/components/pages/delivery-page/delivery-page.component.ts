@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title, Meta } from '@angular/platform-browser';
 import {
   state,
   style,
@@ -21,9 +22,12 @@ import {
 })
 export class DeliveryPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private titleService: Title,
+    private metaTagService: Meta) { }
 
   ngOnInit(): void {
+    this.titleService.setTitle("Réveillé par monsieur | Livraison");
+    this.metaTagService.updateTag({name: 'description', content: 'Modalités de livraison ou retrait de marchandise.'})
   }
 
 }
