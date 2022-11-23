@@ -43,8 +43,7 @@ export class StorePageComponent implements OnInit {
     this.searchQuery = search.toLowerCase();
     this.displayedProducts = this.allProducts.filter((item: Product) => {
       return (
-        item.title.toLowerCase().includes(this.searchQuery) ||
-        item.body.toLowerCase().includes(this.searchQuery)
+        item.title.toLowerCase().includes(this.searchQuery)
       );
     });
   }
