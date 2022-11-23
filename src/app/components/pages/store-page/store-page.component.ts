@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/models/Product';
+import { Title, Meta } from '@angular/platform-browser';
 import { ProductsService } from 'src/app/services/products.service';
 import {
   state,
@@ -28,7 +29,8 @@ export class StorePageComponent implements OnInit {
   displayedProducts!: Product[];
   searchQuery: string = '';
 
-  constructor(private productsService: ProductsService) {}
+  constructor(private productsService: ProductsService, private titleService: Title,
+    private metaTagService: Meta) {}
 
   ngOnInit(): void {
     this.productsService.getProducts().subscribe((products: Product[]) => {
@@ -37,6 +39,9 @@ export class StorePageComponent implements OnInit {
       this.displayedProducts = this.allProducts;
       this.isLoading = false;
     });
+
+    this.titleService.setTitle("Réveillé par monsieur | Mobilier vintage");
+    this.metaTagService.updateTag({name: 'description', content: "Trouvailles d'objets et de mobilier Vintage. Monsieur chine dans le passé et partout en Europe des meubles et des objets d'une autre époque qu'il réveille aprés les avoir sorti des greniers."})
   }
 
   filterProducts(search: string) {
