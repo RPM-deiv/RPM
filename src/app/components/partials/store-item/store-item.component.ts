@@ -47,9 +47,6 @@ export class StoreItemComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {}
-
-  logLoad() {
-    console.log('lol')
+  ngOnInit(): void {
   }
 }
