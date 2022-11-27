@@ -14,7 +14,7 @@ exports.handler = async () => {
       const output = {
         id: product.slug.current,
         title: product.title,
-        url: `${process.env.URL}/.netlify/functions/getProducts`,
+        // url: `${process.env.URL}/.netlify/functions/getProducts`,
         state: product.state,
         tags: product.tags,
         dimensions: product.dimensions,
@@ -22,14 +22,16 @@ exports.handler = async () => {
         body: product.body,
         images: [],
         complementarytext: product.complementarytext,
+        hotspots: [],
       };
 
       if (product.images && product.images.length > 0) {
         product.images.forEach((img) => {
+
           const imgRef = img.asset._ref;
           output.images.push({
             small: imageUrlBuilder(sanity).image(imgRef).width(150).url(),
-            square: imageUrlBuilder(sanity).image(imgRef).size(400, 400).url(),
+            square: imageUrlBuilder(sanity).image(img).size(400, 400).url(),
             large: imageUrlBuilder(sanity).image(imgRef).width(800).url(),
           });
         });
